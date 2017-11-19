@@ -1,0 +1,6 @@
+.idea/
+*.pyc
+anno_store/*.txt
+model_store/*.pkl
+model_store/*.pt
+log/*.log
