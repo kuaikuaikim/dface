@@ -1,4 +1,6 @@
-[![Build Status](http://pic.dface.io/dfacelogoblue.svg)](http://dface.io)
+<div align=center>
+<img src="http://pic.dface.io/dfacelogoblue.png" width="350">
+</div>
 
 -----------------
 # DFace • [![License](http://pic.dface.io/apache2.svg)](https://opensource.org/licenses/Apache-2.0) [![gitter](http://pic.dface.io/gitee.svg)](https://gitter.im/cmusatyalab/DFace)
@@ -120,8 +122,7 @@ python test_image.py
 
 ### Face Recognition  
 
-@TODO
-
+@TODO  
 
 ##Demo  
 
