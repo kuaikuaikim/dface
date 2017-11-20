@@ -40,8 +40,7 @@ def create_mtcnn_net(p_model_path=None, r_model_path=None, o_model_path=None, us
 
 class MtcnnDetector(object):
     """
-        Joint Face Detection and Alignment using Multi-task Cascaded Convolutional Neural Networks
-        see https://github.com/kpzhang93/MTCNN_face_detection_alignment
+        P,R,O net face detection and landmarks align
     """
     def __init__(self,
                  pnet = None,
