@@ -14,6 +14,7 @@
 **Free and open source face detection and recognition with
 deep learning. Based on the MTCNN and ResNet Center-Loss**
 
+[中文版　README](https://github.com/kuaikuaikim/DFace/blob/master/README_zh.md)
 
 **DFace** is an open source software for face detection and recognition. All features implemented by the **[pytorch](https://github.com/pytorch/pytorch)** (the facebook deeplearning framework). With PyTorch, we use a technique called reverse-mode auto-differentiation, which allows developer to change the way your network behaves arbitrarily with zero lag or overhead.
 DFace inherit these advanced characteristic, that make it dynamic and ease code review.
@@ -27,7 +28,7 @@ Our inspiration comes from several research papers on this topic, as well as cur
 ![mtcnn](http://pic.dface.io/mtcnn.png)
 
 **If you want to contribute to DFace, please review the CONTRIBUTING.md in the project.We use [GitHub issues](https://github.com/DFace/DFace/issues) for
-tracking requests and bugs. **
+tracking requests and bugs.**
 
 ## Installation
 
@@ -124,7 +125,8 @@ python test_image.py
 
 TODO  
 
-##Demo  
+
+## Demo  
 
 ![mtcnn](http://pic.dface.io/figure_2.png)  
 
