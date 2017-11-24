@@ -12,10 +12,10 @@
 
 
 **Free and open source face detection and recognition with
-deep neural networks. Based on the MTCNN and ResNet Center-Loss**
+deep learning. Based on the MTCNN and ResNet Center-Loss**
 
 
-**DFace** is an open source software for Deep learning face detection and recognition. All features implemented by the **[pytorch](https://github.com/pytorch/pytorch)** (the facebook deeplearning framework). With PyTorch, we use a technique called reverse-mode auto-differentiation, which allows developer to change the way your network behaves arbitrarily with zero lag or overhead.
+**DFace** is an open source software for face detection and recognition. All features implemented by the **[pytorch](https://github.com/pytorch/pytorch)** (the facebook deeplearning framework). With PyTorch, we use a technique called reverse-mode auto-differentiation, which allows developer to change the way your network behaves arbitrarily with zero lag or overhead.
 DFace inherit these advanced characteristic, that make it dynamic and ease code review.
 
 DFace support GPU acceleration with NVIDIA cuda. We highly recommend you use the linux GPU version.It's very fast and extremely realtime.
