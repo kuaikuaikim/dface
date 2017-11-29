@@ -1,5 +1,5 @@
 <div align=center>
-<a href="http://dface.io"><img src="http://affluent.oss-cn-hangzhou.aliyuncs.com/html/images/dface_logo.png" width="350"></a>
+<a href="http://dface.io" target="_blank"><img src="http://affluent.oss-cn-hangzhou.aliyuncs.com/html/images/dface_logo.png" width="350"></a>
 </div>
 
 -----------------
