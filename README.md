@@ -1,5 +1,5 @@
 <div align=center>
-<a href="http://dface.io" target="_blank"><img src="http://affluent.oss-cn-hangzhou.aliyuncs.com/html/images/dface_logo.png" width="350"></a>
+<a href="http://dface.io" target="_blank"><img src="http://pic.dface.io/dfacelogoblue.png" width="350"></a>
 </div>
 
 -----------------
@@ -25,7 +25,7 @@ Our inspiration comes from several research papers on this topic, as well as cur
 
 **MTCNN Structure**　　
 
-![mtcnn](http://affluent.oss-cn-hangzhou.aliyuncs.com/html/images/mtcnn_st.png)
+![mtcnn](http://pic.dface.io/mtcnn.png)
 
 **If you want to contribute to DFace, please review the CONTRIBUTING.md in the project.We use [GitHub issues](https://github.com/DFace/DFace/issues) for
 tracking requests and bugs.**
@@ -128,7 +128,7 @@ TODO
 
 ## Demo  
 
-![mtcnn](http://affluent.oss-cn-hangzhou.aliyuncs.com/html/images/dface_demo.png)  
+![mtcnn](http://pic.dface.io/figure_2.png)  
 
 
 ## License
