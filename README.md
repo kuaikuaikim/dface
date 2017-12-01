@@ -138,4 +138,4 @@ TODO
 
 ## Reference
 
-* [Seanlinx/mtcnn](https://github.com/Seanlinx/mtcnn)
+* [OpenFace](https://github.com/cmusatyalab/openface)
