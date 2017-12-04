@@ -3,7 +3,7 @@
 </div>
 
 -----------------
-# DFace • [![License](http://pic.dface.io/apache2.svg)](https://opensource.org/licenses/Apache-2.0) [![gitter](http://pic.dface.io/gitee.svg)](https://gitter.im/cmusatyalab/DFace)
+# DFace • [![License](http://pic.dface.io/apache2.svg)](https://opensource.org/licenses/Apache-2.0) [![gitter](http://pic.dface.io/gitee.svg)](https://dfaceio.slack.com)
 
 
 | **`Linux CPU`** | **`Linux GPU`** | **`Mac OS CPU`** | **`Windows CPU`** |
@@ -18,6 +18,8 @@ deep learning. Based on the MTCNN and ResNet Center-Loss**
 
 [码云项目地址](https://gitee.com/kuaikuaikim/dface)  
 
+**[Slack address](https://dfaceio.slack.com/)**
+
 
 **DFace** is an open source software for face detection and recognition. All features implemented by the **[pytorch](https://github.com/pytorch/pytorch)** (the facebook deeplearning framework). With PyTorch, we use a technique called reverse-mode auto-differentiation, which allows developer to change the way your network behaves arbitrarily with zero lag or overhead.
 DFace inherit these advanced characteristic, that make it dynamic and ease code review.
@@ -30,7 +32,7 @@ Our inspiration comes from several research papers on this topic, as well as cur
 
 ![mtcnn](http://pic.dface.io/mtcnn.png)
 
-**If you want to contribute to DFace, please review the CONTRIBUTING.md in the project.We use [GitHub issues](https://github.com/DFace/DFace/issues) for
+**If you want to contribute to DFace, please review the CONTRIBUTING.md in the project.We use [Slack](https://dfaceio.slack.com/) for
 tracking requests and bugs.**
 
 ## Installation
@@ -132,6 +134,11 @@ TODO
 ## Demo  
 
 ![mtcnn](http://pic.dface.io/figure_2.png)  
+
+
+### QQ交流群  
+
+#### 681403076  
 
 
 ## License
