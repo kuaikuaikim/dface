@@ -33,7 +33,16 @@ Our inspiration comes from several research papers on this topic, as well as cur
 ![mtcnn](http://pic.dface.io/mtcnn.png)
 
 **If you want to contribute to DFace, please review the CONTRIBUTING.md in the project.We use [Slack](https://dfaceio.slack.com/) for
-tracking requests and bugs.**
+tracking requests and bugs. Also you can following the QQ group 681403076**
+
+
+## TODO(which you need to develop)
+- Based on cener loss or triplet loss implement the face conpare. Recommended Model is ResNet inception v2. Refer this [Paper](https://arxiv.org/abs/1503.03832) and [FaceNet](https://github.com/davidsandberg/facenet)
+- Face Anti-Spoofing, distinguish from face light and texture。Recomend with the LBP algorithm and SVM.
+- 3D mask  Anti-Spoofing.
+- Mobile first with caffe2 and c++.
+- Tensor rt migration.
+
 
 ## Installation
 
