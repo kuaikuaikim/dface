@@ -33,7 +33,7 @@ Our inspiration comes from several research papers on this topic, as well as cur
 ![mtcnn](http://pic.dface.io/mtcnn.png)
 
 **If you want to contribute to DFace, please review the CONTRIBUTING.md in the project.We use [Slack](https://dfaceio.slack.com/) for
-tracking requests and bugs. Also you can following the QQ group 681403076**
+tracking requests and bugs. Also you can following the QQ group 681403076 or my wechat jinkuaikuai005**
 
 
 ## TODO(which you need to develop)
@@ -148,6 +148,10 @@ TODO
 ### QQ交流群  
 
 #### 681403076  
+
+#### 本人微信(wechat)
+
+![](http://affluent.oss-cn-hangzhou.aliyuncs.com/html/images/perqr.jpg) 
 
 
 ## License
