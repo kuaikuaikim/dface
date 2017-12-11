@@ -32,8 +32,7 @@ Our inspiration comes from several research papers on this topic, as well as cur
 
 ![mtcnn](http://pic.dface.io/mtcnn.png)
 
-**If you want to contribute to DFace, please review the CONTRIBUTING.md in the project.We use [Slack](https://dfaceio.slack.com/) for
-tracking requests and bugs. Also you can following the QQ group 681403076 or my wechat jinkuaikuai005**
+**If you want to contribute to DFace, please review the CONTRIBUTING.md in the project.We use [Slack](https://dfaceio.slack.com/) for tracking requests and bugs. Also you can following the QQ group 681403076 or my wechat jinkuaikuai005**
 
 
 ## TODO(which you need to develop)
@@ -63,7 +62,7 @@ You can create your DFace environment very easily.
 conda env create -f path/to/environment.yml
 ```
 
-### Face Detetion
+### Face Detetion and Recognition
 
 If you are interested in how to train a mtcnn model, you can follow next step.
 
@@ -135,7 +134,7 @@ python src/train_net/train_o_net.py
 python test_image.py
 ```    
 
-### Face Recognition  
+### Face Comparing  
 
 TODO  
 
