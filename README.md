@@ -41,7 +41,7 @@ Our inspiration comes from several research papers on this topic, as well as cur
 - 3D mask  Anti-Spoofing.
 - Mobile first with caffe2 and c++.
 - Tensor rt migration.
-
+- Docker support, gpu version
 
 ## Installation
 
