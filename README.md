@@ -70,6 +70,13 @@ cd DFace
 conda env create -f path/to/environment.yml
 ```
 
+Add DFace to your local python path  
+
+```shell
+export PYTHONPATH=$PYTHONPATH:{your local DFace root path}
+```
+
+
 ### Face Detetion and Recognition
 
 If you are interested in how to train a mtcnn model, you can follow next step.
