@@ -54,11 +54,19 @@ First setting a pytorch and cv2. We suggest Anaconda to make a virtual and indep
 * pytorch
 * torchvision
 * cv2
-* matplotlib
+* matplotlib  
 
-Also we provide a anaconda environment dependency list called environment.yml in the root path. 
+
+```shell
+git clone https://github.com/kuaikuaikim/DFace.git
+```
+
+
+Also we provide a anaconda environment dependency list called environment.yml (windows please use environment-win64.yml) in the root path. 
 You can create your DFace environment very easily.
 ```shell
+cd DFace
+
 conda env create -f path/to/environment.yml
 ```
 
@@ -68,65 +76,65 @@ If you are interested in how to train a mtcnn model, you can follow next step.
 
 #### Train mtcnn Model
 MTCNN have three networks called **PNet**, **RNet** and **ONet**.So we should train it on three stage, and each stage depend on previous network which will generate train data to feed current train net, also propel the minimum loss between two networks.
-Please download the train face **datasets** before your training. We use **[WIDER FACE](http://mmlab.ie.cuhk.edu.hk/projects/WIDERFace/)** and **[CelebA](http://mmlab.ie.cuhk.edu.hk/projects/CelebA.html)**
+Please download the train face **datasets** before your training. We use **[WIDER FACE](http://mmlab.ie.cuhk.edu.hk/projects/WIDERFace/)** and **[CelebA](http://mmlab.ie.cuhk.edu.hk/projects/CelebA.html)**  .WIDER FACE is used for training face classification and face bounding box, also CelebA is used for face landmarks. The original wider face annotation file is matlab format, you must transform it to text. I have put the transformed annotation text file into [anno_store/wider_origin_anno.txt](https://github.com/kuaikuaikim/DFace/blob/master/anno_store/wider_origin_anno.txt). This file is related to the following parameter called  --anno_file.
+
+
+* Create the DFace train data temporary folder, this folder is involved in the following parameter --dface_traindata_store 
+
+```shell
+mkdir {your dface traindata folder}
+```   
 
 
 * Generate PNet Train data and annotation file
 
 ```shell
-python src/prepare_data/gen_Pnet_train_data.py --dataset_path {your dataset path} --anno_file {your dataset original annotation path}
+python dface/prepare_data/gen_Pnet_train_data.py --prefix_path {annotation file image prefix path, just your local wider face images folder} --dface_traindata_store  {dface train data temporary folder you made before }  --anno_file ｛wider face original combined  annotation file, default anno_store/wider_origin_anno.txt}
 ```
 * Assemble annotation file and shuffle it
 
 ```shell
-python src/prepare_data/assemble_pnet_imglist.py
+python dface/prepare_data/assemble_pnet_imglist.py
 ```
-
 * Train PNet model
 
-
 ```shell
-python src/train_net/train_p_net.py
+python dface/train_net/train_p_net.py
 ```
 * Generate RNet Train data and annotation file
 
 ```shell
-python src/prepare_data/gen_Rnet_train_data.py --dataset_path {your dataset path} --anno_file {your dataset original annotation path} --pmodel_file {yout PNet model file trained before}
+python dface/prepare_data/gen_Rnet_train_data.py --prefix_path {annotation file image prefix path, just your local wider face images folder} --dface_traindata_store {dface train data temporary folder you made before } --anno_file ｛wider face original combined  annotation file, default anno_store/wider_origin_anno.txt} --pmodel_file {your PNet model file trained before}
 ```
 * Assemble annotation file and shuffle it
 
 ```shell
-python src/prepare_data/assemble_rnet_imglist.py
+python dface/prepare_data/assemble_rnet_imglist.py
 ```
-
 * Train RNet model
 
 ```shell
-python src/train_net/train_r_net.py
+python dface/train_net/train_r_net.py
 ```
-
 * Generate ONet Train data and annotation file
 
 ```shell
-python src/prepare_data/gen_Onet_train_data.py --dataset_path {your dataset path} --anno_file {your dataset original annotation path} --pmodel_file {yout PNet model file trained before} --rmodel_file {yout RNet model file trained before}
+python dface/prepare_data/gen_Onet_train_data.py --prefix_path {annotation file image prefix path, just your local wider face images folder} --dface_traindata_store {dface train data temporary folder you made before } --anno_file ｛wider face original combined  annotation file, default anno_store/wider_origin_anno.txt} --pmodel_file {your PNet model file trained before} --rmodel_file {your RNet model file trained before}
 ```
-
 * Generate ONet Train landmarks data
 
 ```shell
-python src/prepare_data/gen_landmark_48.py
+python dface/prepare_data/gen_landmark_48.py
 ```
-
 * Assemble annotation file and shuffle it
 
 ```shell
-python src/prepare_data/assemble_onet_imglist.py
+python dface/prepare_data/assemble_onet_imglist.py
 ```
-
 * Train ONet model
 
 ```shell
-python src/train_net/train_o_net.py
+python dface/train_net/train_o_net.py
 ```
 
 #### Test face detection
