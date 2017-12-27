@@ -6,18 +6,17 @@ import random
 import sys
 import numpy.random as npr
 import argparse
-import config
-import core.utils as utils
-
+import dface.config as config
+import dface.core.utils as utils
 
 
 def gen_data(anno_file, data_dir, prefix):
 
 
-    size = 24
+    size = 48
     image_id = 0
 
-    landmark_imgs_save_dir = os.path.join(data_dir,"24/landmark")
+    landmark_imgs_save_dir = os.path.join(data_dir,"48/landmark")
     if not os.path.exists(landmark_imgs_save_dir):
         os.makedirs(landmark_imgs_save_dir)
 
@@ -25,7 +24,7 @@ def gen_data(anno_file, data_dir, prefix):
     if not os.path.exists(anno_dir):
         os.makedirs(anno_dir)
 
-    landmark_anno_filename = config.RNET_LANDMARK_ANNO_FILENAME
+    landmark_anno_filename = config.ONET_LANDMARK_ANNO_FILENAME
     save_landmark_anno = os.path.join(anno_dir,landmark_anno_filename)
 
     f = open(save_landmark_anno, 'w')
@@ -35,7 +34,7 @@ def gen_data(anno_file, data_dir, prefix):
         annotations = f2.readlines()
 
     num = len(annotations)
-    print "%d total images" % num
+    print("%d total images" % num)
 
     l_idx =0
     idx = 0
@@ -50,7 +49,7 @@ def gen_data(anno_file, data_dir, prefix):
         im_path = os.path.join(prefix,annotation[0].replace("\\", "/"))
 
         gt_box = map(float, annotation[1:5])
-        gt_box = [gt_box[0], gt_box[2], gt_box[1], gt_box[3]]
+        # gt_box = [gt_box[0], gt_box[2], gt_box[1], gt_box[3]]
 
 
         gt_box = np.array(gt_box, dtype=np.int32)
@@ -67,7 +66,7 @@ def gen_data(anno_file, data_dir, prefix):
 
         idx = idx + 1
         if idx % 100 == 0:
-            print "%d images done, landmark images: %d"%(idx,l_idx)
+            print("%d images done, landmark images: %d"%(idx,l_idx))
 
         x1, y1, x2, y2 = gt_box
 

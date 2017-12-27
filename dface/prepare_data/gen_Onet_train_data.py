@@ -1,6 +1,5 @@
 import argparse
 
-
 import cv2
 import numpy as np
 from core.detect import MtcnnDetector,create_mtcnn_net
@@ -9,15 +8,15 @@ from core.image_reader import TestImageLoader
 import time
 import os
 import cPickle
-from core.utils import convert_to_square,IoU
-import config
-import core.vision as vision
+from dface.core.utils import convert_to_square,IoU
+import dface.config as config
+import dface.core.vision as vision
 
-def gen_rnet_data(data_dir, anno_file, pnet_model_file, prefix_path='', use_cuda=True, vis=False):
+def gen_onet_data(data_dir, anno_file, pnet_model_file, rnet_model_file, prefix_path='', use_cuda=True, vis=False):
 
 
-    pnet, _, _ = create_mtcnn_net(p_model_path=pnet_model_file, use_cuda=use_cuda)
-    mtcnn_detector = MtcnnDetector(pnet=pnet,min_face_size=12)
+    pnet, rnet, _ = create_mtcnn_net(p_model_path=pnet_model_file, r_model_path=rnet_model_file, use_cuda=use_cuda)
+    mtcnn_detector = MtcnnDetector(pnet=pnet, rnet=rnet, min_face_size=12)
 
     imagedb = ImageDB(anno_file,mode="test",prefix_path=prefix_path)
     imdb = imagedb.load_imdb()
@@ -28,12 +27,15 @@ def gen_rnet_data(data_dir, anno_file, pnet_model_file, prefix_path='', use_cuda
 
     for databatch in image_reader:
         if batch_idx % 100 == 0:
-            print "%d images done" % batch_idx
+            print("%d images done" % batch_idx)
         im = databatch
 
         t = time.time()
 
-        boxes, boxes_align = mtcnn_detector.detect_pnet(im=im)
+        p_boxes, p_boxes_align = mtcnn_detector.detect_pnet(im=im)
+
+        boxes, boxes_align = mtcnn_detector.detect_rnet(im=im, dets=p_boxes_align)
+
         if boxes_align is None:
             all_boxes.append(np.array([]))
             batch_idx += 1
@@ -47,7 +49,6 @@ def gen_rnet_data(data_dir, anno_file, pnet_model_file, prefix_path='', use_cuda
         all_boxes.append(boxes_align)
         batch_idx += 1
 
-    # save_path = model_store_path()
     save_path = config.MODEL_STORE_DIR
 
     if not os.path.exists(save_path):
@@ -58,15 +59,18 @@ def gen_rnet_data(data_dir, anno_file, pnet_model_file, prefix_path='', use_cuda
         cPickle.dump(all_boxes, f, cPickle.HIGHEST_PROTOCOL)
 
 
-    gen_rnet_sample_data(data_dir,anno_file,save_file)
+    gen_onet_sample_data(data_dir,anno_file,save_file)
 
 
 
-def gen_rnet_sample_data(data_dir,anno_file,det_boxs_file):
 
-    neg_save_dir = os.path.join(data_dir, "24/negative")
-    pos_save_dir = os.path.join(data_dir, "24/positive")
-    part_save_dir = os.path.join(data_dir, "24/part")
+
+
+def gen_onet_sample_data(data_dir,anno_file,det_boxs_file):
+
+    neg_save_dir = os.path.join(data_dir, "48/negative")
+    pos_save_dir = os.path.join(data_dir, "48/positive")
+    part_save_dir = os.path.join(data_dir, "48/part")
 
     for dir_path in [neg_save_dir, pos_save_dir, part_save_dir]:
         if not os.path.exists(dir_path):
@@ -79,13 +83,13 @@ def gen_rnet_sample_data(data_dir,anno_file,det_boxs_file):
     with open(anno_file, 'r') as f:
         annotations = f.readlines()
 
-    image_size = 24
-    net = "rnet"
+    image_size = 48
+    net = "onet"
 
     im_idx_list = list()
     gt_boxes_list = list()
     num_of_images = len(annotations)
-    print "processing %d images in total" % num_of_images
+    print("processing %d images in total" % num_of_images)
 
     for annotation in annotations:
         annotation = annotation.strip().split(' ')
@@ -108,7 +112,7 @@ def gen_rnet_sample_data(data_dir,anno_file,det_boxs_file):
     det_handle = open(det_boxs_file, 'r')
 
     det_boxes = cPickle.load(det_handle)
-    print len(det_boxes), num_of_images
+    print(len(det_boxes), num_of_images)
     assert len(det_boxes) == num_of_images, "incorrect detections or ground truths"
 
     # index of neg, pos and part face, used as their image names
@@ -118,7 +122,7 @@ def gen_rnet_sample_data(data_dir,anno_file,det_boxs_file):
     image_done = 0
     for im_idx, dets, gts in zip(im_idx_list, det_boxes, gt_boxes_list):
         if image_done % 100 == 0:
-            print "%d images done" % image_done
+            print("%d images done" % image_done)
         image_done += 1
 
         if dets.shape[0] == 0:
@@ -181,10 +185,6 @@ def gen_rnet_sample_data(data_dir,anno_file,det_boxs_file):
 
 
 
-
-
-
-
 def model_store_path():
     return os.path.dirname(os.path.dirname(os.path.dirname(os.path.realpath(__file__))))+"/model_store"
 
@@ -196,15 +196,16 @@ def parse_args():
 
     parser.add_argument('--dataset_path', dest='dataset_path', help='dataset folder',
                         default='../data/wider/', type=str)
-    parser.add_argument('--anno_file', dest='annotation_file', help='dataset original annotation file',
+    parser.add_argument('--anno_file', dest='annotation_file', help='output data folder',
                         default='../data/wider/anno.txt', type=str)
     parser.add_argument('--pmodel_file', dest='pnet_model_file', help='PNet model file path',
                         default='/idata/workspace/mtcnn/model_store/pnet_epoch_5best.pt', type=str)
+    parser.add_argument('--rmodel_file', dest='rnet_model_file', help='RNet model file path',
+                        default='/idata/workspace/mtcnn/model_store/rnet_epoch_1.pt', type=str)
     parser.add_argument('--gpu', dest='use_cuda', help='with gpu',
                         default=config.USE_CUDA, type=bool)
     parser.add_argument('--prefix_path', dest='prefix_path', help='image prefix root path',
                         default='', type=str)
-
 
     args = parser.parse_args()
     return args
@@ -213,7 +214,7 @@ def parse_args():
 
 if __name__ == '__main__':
     args = parse_args()
-    gen_rnet_data(args.dataset_path, args.annotation_file, args.pnet_model_file, args.prefix_path, args.use_cuda)
+    gen_onet_data(args.dataset_path, args.annotation_file, args.pnet_model_file, args.rnet_model_file, args.prefix_path, args.use_cuda)
 
 
 

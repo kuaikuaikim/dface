@@ -2,21 +2,20 @@
 import os
 import cv2
 import numpy as np
-import random
 import sys
 import numpy.random as npr
 import argparse
-import config
-import core.utils as utils
+import dface.config as config
+import dface.core.utils as utils
 
 
 def gen_data(anno_file, data_dir, prefix):
 
 
-    size = 48
+    size = 12
     image_id = 0
 
-    landmark_imgs_save_dir = os.path.join(data_dir,"48/landmark")
+    landmark_imgs_save_dir = os.path.join(data_dir,"12/landmark")
     if not os.path.exists(landmark_imgs_save_dir):
         os.makedirs(landmark_imgs_save_dir)
 
@@ -24,17 +23,18 @@ def gen_data(anno_file, data_dir, prefix):
     if not os.path.exists(anno_dir):
         os.makedirs(anno_dir)
 
-    landmark_anno_filename = config.ONET_LANDMARK_ANNO_FILENAME
+    landmark_anno_filename = config.PNET_LANDMARK_ANNO_FILENAME
     save_landmark_anno = os.path.join(anno_dir,landmark_anno_filename)
 
     f = open(save_landmark_anno, 'w')
     # dstdir = "train_landmark_few"
 
+
     with open(anno_file, 'r') as f2:
         annotations = f2.readlines()
 
     num = len(annotations)
-    print "%d total images" % num
+    print("%d pics in total" % num)
 
     l_idx =0
     idx = 0
@@ -49,12 +49,14 @@ def gen_data(anno_file, data_dir, prefix):
         im_path = os.path.join(prefix,annotation[0].replace("\\", "/"))
 
         gt_box = map(float, annotation[1:5])
-        # gt_box = [gt_box[0], gt_box[2], gt_box[1], gt_box[3]]
+        gt_box = [gt_box[0], gt_box[2], gt_box[1], gt_box[3]]
 
 
         gt_box = np.array(gt_box, dtype=np.int32)
 
-        landmark = map(float, annotation[5:])
+
+
+        landmark =  bbox = map(float, annotation[5:])
         landmark = np.array(landmark, dtype=np.float)
 
         img = cv2.imread(im_path)
@@ -66,7 +68,7 @@ def gen_data(anno_file, data_dir, prefix):
 
         idx = idx + 1
         if idx % 100 == 0:
-            print "%d images done, landmark images: %d"%(idx,l_idx)
+            print("%d images done, landmark images: %d"%(idx,l_idx))
 
         x1, y1, x2, y2 = gt_box
 
@@ -125,6 +127,7 @@ def gen_data(anno_file, data_dir, prefix):
 
                 l_idx += 1
 
+
     f.close()
 
 
@@ -135,11 +138,11 @@ def parse_args():
                                      formatter_class=argparse.ArgumentDefaultsHelpFormatter)
 
     parser.add_argument('--dataset_path', dest='dataset_path', help='dataset folder',
-                        default='/idata/data/wider/', type=str)
+                        default='../data/wider/', type=str)
     parser.add_argument('--anno_file', dest='annotation_file', help='dataset original annotation file',
-                        default='/idata/data/trainImageList.txt', type=str)
+                        default='../data/wider/anno.txt', type=str)
     parser.add_argument('--prefix_path', dest='prefix_path', help='image prefix root path',
-                        default='/idata/data', type=str)
+                        default='../data/', type=str)
 
 
     args = parser.parse_args()

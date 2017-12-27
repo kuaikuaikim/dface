@@ -1,8 +1,8 @@
 import argparse
 import sys
-from core.imagedb import ImageDB
-import train as train
-import config
+from dface.core.imagedb import ImageDB
+import dface.train_net.train as train
+import dface.config as config
 import os
 
 
@@ -42,8 +42,8 @@ def parse_args():
 
 if __name__ == '__main__':
     args = parse_args()
-    print 'train Rnet argument:'
-    print args
+    print('train Rnet argument:')
+    print(args)
 
 
     train_net(annotation_file=args.annotation_file, model_store_path=args.model_store_path,

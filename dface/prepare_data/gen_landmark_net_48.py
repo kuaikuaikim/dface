@@ -8,9 +8,9 @@ from core.image_reader import TestImageLoader
 import time
 import os
 import cPickle
-from core.utils import convert_to_square,IoU
-import config
-import core.vision as vision
+from dface.core.utils import convert_to_square,IoU
+import dface.config as config
+import dface.core.vision as vision
 
 def gen_landmark48_data(data_dir, anno_file, pnet_model_file, rnet_model_file, prefix_path='', use_cuda=True, vis=False):
 
@@ -27,7 +27,7 @@ def gen_landmark48_data(data_dir, anno_file, pnet_model_file, rnet_model_file, p
 
     for databatch in image_reader:
         if batch_idx % 100 == 0:
-            print "%d images done" % batch_idx
+            print("%d images done" % batch_idx)
         im = databatch
 
 
@@ -91,7 +91,7 @@ def gen_sample_data(data_dir, anno_file, det_boxs_file, prefix_path =''):
     gt_boxes_list = list()
     gt_landmark_list = list()
     num_of_images = len(annotations)
-    print "processing %d images in total" % num_of_images
+    print("processing %d images in total" % num_of_images)
 
     for annotation in annotations:
         annotation = annotation.strip().split(' ')
@@ -117,7 +117,7 @@ def gen_sample_data(data_dir, anno_file, det_boxs_file, prefix_path =''):
     det_handle = open(det_boxs_file, 'r')
 
     det_boxes = cPickle.load(det_handle)
-    print len(det_boxes), num_of_images
+    print(len(det_boxes), num_of_images)
     assert len(det_boxes) == num_of_images, "incorrect detections or ground truths"
 
     # index of neg, pos and part face, used as their image names
@@ -125,7 +125,7 @@ def gen_sample_data(data_dir, anno_file, det_boxs_file, prefix_path =''):
     image_done = 0
     for im_idx, dets, gts, landmark in zip(im_idx_list, det_boxes, gt_boxes_list, gt_landmark_list):
         if image_done % 100 == 0:
-            print "%d images done" % image_done
+            print("%d images done" % image_done)
         image_done += 1
 
         if dets.shape[0] == 0:

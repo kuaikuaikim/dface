@@ -3,8 +3,8 @@ import numpy as np
 import cv2
 import os
 import numpy.random as npr
-from core.utils import IoU
-import config
+from dface.core.utils import IoU
+import dface.config as config
 
 
 
@@ -34,7 +34,7 @@ def gen_pnet_data(data_dir,anno_file):
         annotations = f.readlines()
 
     num = len(annotations)
-    print "%d pics in total" % num
+    print("%d pics in total" % num)
     p_idx = 0
     n_idx = 0
     d_idx = 0
@@ -48,7 +48,7 @@ def gen_pnet_data(data_dir,anno_file):
         img = cv2.imread(im_path)
         idx += 1
         if idx % 100 == 0:
-            print idx, "images done"
+            print(idx, "images done")
 
         height, width, channel = img.shape
 
@@ -147,7 +147,7 @@ def gen_pnet_data(data_dir,anno_file):
                     cv2.imwrite(save_file, resized_im)
                     d_idx += 1
             box_idx += 1
-            print "%s images done, pos: %s part: %s neg: %s"%(idx, p_idx, d_idx, n_idx)
+            print("%s images done, pos: %s part: %s neg: %s"%(idx, p_idx, d_idx, n_idx))
 
     f1.close()
     f2.close()

@@ -137,7 +137,7 @@ class ImageDB(object):
         imdb: dict
             image database with flipped image annotations added
         """
-        print 'append flipped images to imdb', len(imdb)
+        print('append flipped images to imdb', len(imdb))
         for i in range(len(imdb)):
             imdb_ = imdb[i]
             m_bbox = imdb_['bbox_target'].copy()

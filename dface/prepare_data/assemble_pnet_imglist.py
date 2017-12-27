@@ -1,6 +1,6 @@
 import os
-import config
-import assemble as assemble
+import dface.config as config
+import dface.prepare_data.assemble as assemble
 
 
 if __name__ == '__main__':
@@ -22,4 +22,4 @@ if __name__ == '__main__':
     imglist_file = os.path.join(anno_dir, imglist_filename)
 
     chose_count = assemble.assemble_data(imglist_file ,anno_list)
-    print "PNet train annotation result file path:%s" % imglist_file
+    print("PNet train annotation result file path:%s" % imglist_file)
