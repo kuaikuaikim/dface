@@ -137,11 +137,11 @@ def parse_args():
     parser = argparse.ArgumentParser(description='Test mtcnn',
                                      formatter_class=argparse.ArgumentDefaultsHelpFormatter)
 
-    parser.add_argument('--dataset_path', dest='dataset_path', help='dataset folder',
+    parser.add_argument('--dface_traindata_store', dest='traindata_store', help='dface train data temporary folder,include 12,24,48/postive,negative,part,landmark',
                         default='../data/wider/', type=str)
-    parser.add_argument('--anno_file', dest='annotation_file', help='dataset original annotation file',
+    parser.add_argument('--anno_file', dest='annotation_file', help='celeba dataset original annotation file',
                         default='../data/wider/anno.txt', type=str)
-    parser.add_argument('--prefix_path', dest='prefix_path', help='image prefix root path',
+    parser.add_argument('--prefix_path', dest='prefix_path', help='annotation file image prefix root path',
                         default='../data/', type=str)
 
 
@@ -151,6 +151,6 @@ def parse_args():
 if __name__ == '__main__':
     args = parse_args()
 
-    gen_data(args.annotation_file, args.dataset_path, args.prefix_path)
+    gen_data(args.annotation_file, args.traindata_store, args.prefix_path)
 
 
