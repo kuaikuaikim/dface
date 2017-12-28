@@ -46,7 +46,7 @@ Our inspiration comes from several research papers on this topic, as well as cur
 ## Installation
 
 DFace has two major module, detection and recognition.In these two, We provide all tutorials about how to train a model and running.
-First setting a pytorch and cv2. We suggest Anaconda to make a virtual and independent python envirment.
+First setting a pytorch and cv2. We suggest Anaconda to make a virtual and independent python envirment.**If you want to train on GPU,please install Nvidia cuda and cudnn.**
 
 ### Requirements
 * cuda 8.0
@@ -144,7 +144,9 @@ python dface/prepare_data/assemble_onet_imglist.py
 python dface/train_net/train_o_net.py
 ```
 
-#### Test face detection
+#### Test face detection  
+**If you don't want to train,you can request me to get model parameters file, then put onet_epoch.pt,pnet_epoch.pt,rnet_epoch.pt in model_store folder.**
+
 ```shell
 python test_image.py
 ```    
@@ -154,7 +156,7 @@ python test_image.py
 TODO  
 
 
-## Demo  
+## Demo  
 
 ![mtcnn](http://pic.dface.io/figure_2.png)  
 
