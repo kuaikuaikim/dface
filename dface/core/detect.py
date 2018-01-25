@@ -13,26 +13,33 @@ def create_mtcnn_net(p_model_path=None, r_model_path=None, o_model_path=None, us
     pnet, rnet, onet = None, None, None
 
     if p_model_path is not None:
-        pnet = PNet(use_cuda=use_cuda)
-        pnet.load_state_dict(torch.load(p_model_path))
+        pnet = PNet(use_cuda=use_cuda)       
         if(use_cuda):
+            pnet.load_state_dict(torch.load(p_model_path))
             pnet.cuda()
+        else:
+            # forcing all GPU tensors to be in CPU while loading
+            pnet.load_state_dict(torch.load(p_model_path, map_location=lambda storage, loc: storage))
         pnet.eval()
 
     if r_model_path is not None:
         rnet = RNet(use_cuda=use_cuda)
-        rnet.load_state_dict(torch.load(r_model_path))
         if (use_cuda):
+            rnet.load_state_dict(torch.load(r_model_path))
             rnet.cuda()
+        else:
+            rnet.load_state_dict(torch.load(r_model_path, map_location=lambda storage, loc: storage))
         rnet.eval()
 
     if o_model_path is not None:
         onet = ONet(use_cuda=use_cuda)
-        onet.load_state_dict(torch.load(o_model_path))
         if (use_cuda):
+            onet.load_state_dict(torch.load(o_model_path))
             onet.cuda()
+        else:
+            onet.load_state_dict(torch.load(o_model_path, map_location=lambda storage, loc: storage))
         onet.eval()
-
+        
     return pnet,rnet,onet
 
 
