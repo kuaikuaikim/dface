@@ -41,7 +41,7 @@ def gen_pnet_data(data_dir,anno_file,prefix):
     for annotation in annotations:
         annotation = annotation.strip().split(' ')
         im_path = os.path.join(prefix,annotation[0])
-        bbox = map(float, annotation[1:])
+        bbox = list(map(float, annotation[1:]))
         boxes = np.array(bbox, dtype=np.int32).reshape(-1, 4)
         img = cv2.imread(im_path)
         idx += 1
