@@ -62,7 +62,7 @@ git clone https://github.com/kuaikuaikim/DFace.git
 ```
 
 
-Also we provide a anaconda environment dependency list called environment.yml (windows please use environment-win64.yml) in the root path. 
+Also we provide a anaconda environment dependency list called environment.yml (windows please use environment-win64.yml,Mac environment_osx.yaml) in the root path. 
 You can create your DFace environment very easily.
 ```shell
 cd DFace
