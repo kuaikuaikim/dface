@@ -145,7 +145,7 @@ python dface/train_net/train_o_net.py
 ```
 
 #### Test face detection  
-**If you don't want to train,you can request me to get model parameters file, then put onet_epoch.pt,pnet_epoch.pt,rnet_epoch.pt in model_store folder.**
+**If you don't want to train,i have put onet_epoch.pt,pnet_epoch.pt,rnet_epoch.pt in model_store folder.You just try test_image.py**
 
 ```shell
 python test_image.py
