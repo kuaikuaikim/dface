@@ -3,7 +3,7 @@
 </div>
 
 -----------------
-# DFace • [![License](http://pic.dface.io/apache2.svg)](https://opensource.org/licenses/Apache-2.0)
+# DFace (Deeplearning Face)• [![License](http://pic.dface.io/apache2.svg)](https://opensource.org/licenses/Apache-2.0)
 
 
 | **`Linux CPU`** | **`Linux GPU`** | **`Mac OS CPU`** | **`Windows CPU`** |
