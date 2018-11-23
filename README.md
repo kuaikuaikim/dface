@@ -164,6 +164,8 @@ TODO
 
 
 ### QQ交流群  
+![](http://dftech.oss-cn-hangzhou.aliyuncs.com/opendface/img/dfaceqqsm.png)
+
 
 #### 681403076  
 
