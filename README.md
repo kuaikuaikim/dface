@@ -8,7 +8,7 @@
 
 | **`Linux CPU`** | **`Linux GPU`** | **`Mac OS CPU`** | **`Windows CPU`** |
 |-----------------|---------------------|------------------|-------------------|
-| [![Build Status](http://dftech.oss-cn-hangzhou.aliyuncs.com/opendface/img/build_pass.svg)](http://pic.dface.io/pass.svg) | [![Build Status](http://pic.dface.io/pass.svg)](http://pic.dface.io/pass.svg) | [![Build Status](http://dftech.oss-cn-hangzhou.aliyuncs.com/opendface/img/build_pass.svg)](http://pic.dface.io/pass.svg) | [![Build Status](http://dftech.oss-cn-hangzhou.aliyuncs.com/opendface/img/build_pass.svg)](http://pic.dface.io/pass.svg) |
+| [![Build Status](http://dftech.oss-cn-hangzhou.aliyuncs.com/opendface/img/build_pass.svg)](http://dftech.oss-cn-hangzhou.aliyuncs.com/opendface/img/build_pass.svg) | [![Build Status](http://dftech.oss-cn-hangzhou.aliyuncs.com/opendface/img/build_pass.svg)](http://dftech.oss-cn-hangzhou.aliyuncs.com/opendface/img/build_pass.svg) | [![Build Status](http://dftech.oss-cn-hangzhou.aliyuncs.com/opendface/img/build_pass.svg)](http://dftech.oss-cn-hangzhou.aliyuncs.com/opendface/img/build_pass.svg) | [![Build Status](hhttp://dftech.oss-cn-hangzhou.aliyuncs.com/opendface/img/build_pass.svg)](http://dftech.oss-cn-hangzhou.aliyuncs.com/opendface/img/build_pass.svg) |
 
 
 **Free and open source face detection and recognition with
