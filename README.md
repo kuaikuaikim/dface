@@ -3,12 +3,12 @@
 </div>
 
 -----------------
-# DFace (Deeplearning Face) • [![License](http://pic.dface.io/apache2.svg)](https://opensource.org/licenses/Apache-2.0) [![gitter](http://pic.dface.io/gitee.svg)](https://dfaceio.slack.com)
+# DFace (Deeplearning Face) • [![License](http://dftech.oss-cn-hangzhou.aliyuncs.com/opendface/img/apache_2.svg)](https://opensource.org/licenses/Apache-2.0)
 
 
 | **`Linux CPU`** | **`Linux GPU`** | **`Mac OS CPU`** | **`Windows CPU`** |
 |-----------------|---------------------|------------------|-------------------|
-| [![Build Status](http://pic.dface.io/pass.svg)](http://pic.dface.io/pass.svg) | [![Build Status](http://pic.dface.io/pass.svg)](http://pic.dface.io/pass.svg) | [![Build Status](http://pic.dface.io/pass.svg)](http://pic.dface.io/pass.svg) | [![Build Status](http://pic.dface.io/pass.svg)](http://pic.dface.io/pass.svg) |
+| [![Build Status](http://dftech.oss-cn-hangzhou.aliyuncs.com/opendface/img/build_pass.svg)](http://pic.dface.io/pass.svg) | [![Build Status](http://pic.dface.io/pass.svg)](http://pic.dface.io/pass.svg) | [![Build Status](http://dftech.oss-cn-hangzhou.aliyuncs.com/opendface/img/build_pass.svg)](http://pic.dface.io/pass.svg) | [![Build Status](http://dftech.oss-cn-hangzhou.aliyuncs.com/opendface/img/build_pass.svg)](http://pic.dface.io/pass.svg) |
 
 
 **Free and open source face detection and recognition with
@@ -30,7 +30,9 @@ Our inspiration comes from several research papers on this topic, as well as cur
 
 **MTCNN Structure**　　
 
-![mtcnn](http://pic.dface.io/mtcnn.png)
+![Pnet](http://dftech.oss-cn-hangzhou.aliyuncs.com/opendface/img/pnet.jpg)
+![Rnet](http://dftech.oss-cn-hangzhou.aliyuncs.com/opendface/img/rnet.jpg)
+![Onet](http://dftech.oss-cn-hangzhou.aliyuncs.com/opendface/img/onet.jpg)
 
 **If you want to contribute to DFace, please review the CONTRIBUTING.md in the project.We use [Slack](https://dfaceio.slack.com/) for tracking requests and bugs. Also you can following the QQ group 681403076 or my wechat jinkuaikuai005**
 
@@ -158,7 +160,7 @@ TODO
 
 ## Demo  
 
-![mtcnn](http://pic.dface.io/figure_2.png)  
+![mtcnn](http://dftech.oss-cn-hangzhou.aliyuncs.com/opendface/img/dface_demoall.PNG)  
 
 
 ### QQ交流群  
