@@ -11,15 +11,12 @@
 | [![Build Status](http://dftech.oss-cn-hangzhou.aliyuncs.com/opendface/img/build_pass.svg)](http://dftech.oss-cn-hangzhou.aliyuncs.com/opendface/img/build_pass.svg) | [![Build Status](http://dftech.oss-cn-hangzhou.aliyuncs.com/opendface/img/build_pass.svg)](http://dftech.oss-cn-hangzhou.aliyuncs.com/opendface/img/build_pass.svg) | [![Build Status](http://dftech.oss-cn-hangzhou.aliyuncs.com/opendface/img/build_pass.svg)](http://dftech.oss-cn-hangzhou.aliyuncs.com/opendface/img/build_pass.svg) | [![Build Status](http://dftech.oss-cn-hangzhou.aliyuncs.com/opendface/img/build_pass.svg)](http://dftech.oss-cn-hangzhou.aliyuncs.com/opendface/img/build_pass.svg) |
 
 
-**Free and open source face detection and recognition with
-deep learning. Based on the MTCNN and ResNet Center-Loss**
+**Free and open source face detection. Based on the MTCNN**
 
 [Official Website(https://dface.tech)](https://dface.tech)  
 
-<video controls>
-  <source src="https://dftech.oss-cn-hangzhou.aliyuncs.com/web/video/dface_demo_480p.mp4" type="video/mp4">
-  Your browser does not support the video tag.
-</video>
+**We provide fully face recognize SDK, Contains tracking, detection, face recognition, face anti-spoofing and so on. See [dface.tech](https://dface.tech) for details.**  
+![DFACE SDK](https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExYXI5aGt5NDFxamk2cTdkZWlpMml1bDhqNnAyc2lyOXV3bnF2Y3RnYyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/MkHTo4WQ5VuPzegTFV/giphy-downsized.gif)
 
 
 **Dface** is an open source software for face detection and recognition. All features implemented by the **[pytorch](https://github.com/pytorch/pytorch)** (the facebook deeplearning framework). With PyTorch, we use a technique called reverse-mode auto-differentiation, which allows developer to change the way your network behaves arbitrarily with zero lag or overhead.
