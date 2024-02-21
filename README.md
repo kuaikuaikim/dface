@@ -153,10 +153,6 @@ python dface/train_net/train_o_net.py
 python test_image.py
 ```    
 
-### Face Comparing  
-
-TODO  
-
 
 ## Demo  
 
@@ -169,12 +165,11 @@ TODO
 
 #### 681403076  
 
-#### 本人微信(wechat)
+#### 本人微信(wechat)  
+##### cobbestne
 
-![](http://affluent.oss-cn-hangzhou.aliyuncs.com/html/images/perqr.jpg) 
 
-
-## License
+## License  
 
 [Apache License 2.0](LICENSE)
 
