@@ -1,9 +1,9 @@
 <div align=center>
-<a href="http://dface.tech" target="_blank"><img src="http://dftech.oss-cn-hangzhou.aliyuncs.com/web/DFACE-logo_dark.png" width="350"></a>
+<a href="https://dface.tech" target="_blank"><img src="http://dftech.oss-cn-hangzhou.aliyuncs.com/web/DFACE-logo_dark.png" width="160"></a>
 </div>
 
 -----------------
-# DFace (Deeplearning Face) • [![License](http://dftech.oss-cn-hangzhou.aliyuncs.com/opendface/img/apache_2.svg)](https://opensource.org/licenses/Apache-2.0)
+# Dface • [![License](http://dftech.oss-cn-hangzhou.aliyuncs.com/opendface/img/apache_2.svg)](https://opensource.org/licenses/Apache-2.0)
 
 
 | **`Linux CPU`** | **`Linux GPU`** | **`Mac OS CPU`** | **`Windows CPU`** |
@@ -14,14 +14,15 @@
 **Free and open source face detection and recognition with
 deep learning. Based on the MTCNN and ResNet Center-Loss**
 
-[中文版　README](https://github.com/kuaikuaikim/DFace/blob/master/README_zh.md)  
+[Official Website(https://dface.tech)](https://dface.tech)  
 
-[码云项目地址](https://gitee.com/kuaikuaikim/dface)  
+<video controls>
+  <source src="https://dftech.oss-cn-hangzhou.aliyuncs.com/web/video/dface_demo_480p.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
 
-**[Slack address](https://dfaceio.slack.com/)**
 
-
-**DFace** is an open source software for face detection and recognition. All features implemented by the **[pytorch](https://github.com/pytorch/pytorch)** (the facebook deeplearning framework). With PyTorch, we use a technique called reverse-mode auto-differentiation, which allows developer to change the way your network behaves arbitrarily with zero lag or overhead.
+**Dface** is an open source software for face detection and recognition. All features implemented by the **[pytorch](https://github.com/pytorch/pytorch)** (the facebook deeplearning framework). With PyTorch, we use a technique called reverse-mode auto-differentiation, which allows developer to change the way your network behaves arbitrarily with zero lag or overhead.
 DFace inherit these advanced characteristic, that make it dynamic and ease code review.
 
 DFace support GPU acceleration with NVIDIA cuda. We highly recommend you use the linux GPU version.It's very fast and extremely realtime.
@@ -60,7 +61,7 @@ First setting a pytorch and cv2. We suggest Anaconda to make a virtual and indep
 
 
 ```shell
-git clone https://github.com/kuaikuaikim/DFace.git
+git clone https://github.com/kuaikuaikim/dface.git
 ```
 
 
@@ -72,7 +73,7 @@ cd DFace
 conda env create -f path/to/environment.yml
 ```
 
-Add DFace to your local python path  
+Add Dface to your local python path  
 
 ```shell
 export PYTHONPATH=$PYTHONPATH:{your local DFace root path}
