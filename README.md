@@ -15,7 +15,7 @@
 
 [Official Website(https://dface.tech)](https://dface.tech)  
 
-**We provide fully face recognize SDK, Contains tracking, detection, face recognition, face anti-spoofing and so on. See [dface.tech](https://dface.tech) for details.**  
+**We also provide fully face recognize SDK, Contains tracking, detection, face recognition, face anti-spoofing and so on. See [dface.tech](https://dface.tech) for details.**  
 ![DFACE SDK](https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExYXI5aGt5NDFxamk2cTdkZWlpMml1bDhqNnAyc2lyOXV3bnF2Y3RnYyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/MkHTo4WQ5VuPzegTFV/giphy-downsized.gif)
 
 
